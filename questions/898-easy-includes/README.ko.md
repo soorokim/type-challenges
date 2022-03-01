@@ -84,5 +84,7 @@ case: Readonly를 넣어도 체크가 되지 않음
   let test44:TestGeneric<{a:string}> = {} as TestGeneric<{a:string}>
   type T34 = typeof test33 extends typeof test44 ? true:false // <- false
 ```
+이런 일 도 일어날 수 있다.
+<img width="462" alt="image" src="https://user-images.githubusercontent.com/44357561/156214195-bb1c358b-b843-4c8e-aa07-d96dfae6b6fa.png">
 
 <!--info-footer-start--><br><a href="../../README.ko.md" target="_blank"><img src="https://img.shields.io/badge/-%EB%8F%8C%EC%95%84%EA%B0%80%EA%B8%B0-grey" alt="돌아가기"/></a> <a href="https://tsch.js.org/898/answer/ko" target="_blank"><img src="https://img.shields.io/badge/-%EC%A0%95%EB%8B%B5%20%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0-teal" alt="정답 공유하기"/></a> <a href="https://tsch.js.org/898/solutions" target="_blank"><img src="https://img.shields.io/badge/-%EC%A0%95%EB%8B%B5%20%EB%B3%B4%EA%B8%B0-de5a77?logo=awesome-lists&logoColor=white" alt="정답 보기"/></a> <!--info-footer-end-->
