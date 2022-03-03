@@ -59,7 +59,7 @@ type Includes<Value extends any[], Item> =
   type TestGeneric2<T> = <X>()=> X extends T ? 1:2 
 
   let test11:TestGeneric<TestData> = {} as TestGeneric<TestData>
-  let test22:TestGeneric2<TestData2> = {} as TestGeneric2<TestData>
+  let test22:TestGeneric2<TestData2> = {} as TestGeneric2<TestData2>
   type T12 = typeof test11 extends typeof test22 ? true:false // <- false
 
   let test33:TestGeneric<TestData> = {} as TestGeneric<TestData>
