@@ -29,4 +29,19 @@ You don't need to write any js/ts logic to handle the problem - just in type lev
 
 You can assume that `key` only accepts `string` and the `value` can be anything - just leave it as-is. Same `key` won't be passed twice.
 
+풀이:
+
+```ts
+type RecordKey = string|number|symbol
+type MergeKey<K extends RecordKey, M extends string> = K | M
+type Chainable<T extends Record<RecordKey, any>={}> = {
+  option<U extends string,V>(key: U extends keyof T ? never : U, value: V): Chainable<{ 
+    [k in MergeKey<keyof T, U>] : k extends keyof T ? T[k] : V 
+  }>
+  get():T
+}
+```
+오래 걸렸다. 다른건 금방 했는데 중복 키를 방지하는 방법을 못알아냈다.
+하지만 끝내 해결했다! 
+
 <!--info-footer-start--><br><a href="../../README.md" target="_blank"><img src="https://img.shields.io/badge/-Back-grey" alt="Back"/></a> <a href="https://tsch.js.org/12/answer" target="_blank"><img src="https://img.shields.io/badge/-Share%20your%20Solutions-teal" alt="Share your Solutions"/></a> <a href="https://tsch.js.org/12/solutions" target="_blank"><img src="https://img.shields.io/badge/-Check%20out%20Solutions-de5a77?logo=awesome-lists&logoColor=white" alt="Check out Solutions"/></a> <!--info-footer-end-->
